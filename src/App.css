@@ -1,44 +1,67 @@
-/* Fix for the overall layout alignment */
 .app-container {
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the sections and headers */
+  align-items: center;
+  min-height: 100vh;           /* optional: helps with vertical feeling */
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Fix for the sections */
 .hierarchy-level {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;           /* slightly wider default – adjust to taste */
   background: white;
   padding: 30px;
   border-radius: 15px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  margin: 16px 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centering the grid inside the section */
+  align-items: center;         /* keeps heading & grid centered */
+  gap: 20px;                   /* better spacing between title + grid + connector */
 }
 
-/* The critical fix for card alignment */
+/* ── Most important part ── */
 .card-grid {
   display: flex;
-  gap: 20px;
-  justify-content: center; /* Centers cards horizontally */
-  align-items: stretch;    /* Makes cards same height */
-  flex-wrap: wrap;         /* Allows wrapping on small screens */
-  width: 100%;             /* Ensures it uses full section width */
+  flex-wrap: wrap;
+  justify-content: center;     /* centers the group of cards */
+  gap: 24px;                   /* modern & comfortable spacing */
+  width: 100%;
+  padding: 0 10px;             /* small breathing room on edges */
+  box-sizing: border-box;
 }
 
-/* Ensure connectors stay centered */
+/* Strongly recommended: give cards a reasonable base width */
+.card-grid .card {             /* ← adjust selector to match your actual class */
+  flex: 0 1 280px;             /* grow a little, shrink if needed, base ~280px */
+  max-width: 340px;            /* prevent cards from becoming too wide */
+  min-width: 240px;            /* prevent cards from becoming too narrow */
+  /* ... your other card styles ... */
+}
+
+/* Connector styling – keep it simple and centered */
 .connector {
   font-size: 2.5rem;
   color: #cbd5e1;
   font-weight: bold;
   line-height: 1;
   text-align: center;
-  margin: 10px 0;
+  margin: 12px 0;
+  width: 100%;
+}
+
+/* Optional: better mobile behavior */
+@media (max-width: 640px) {
+  .card-grid {
+    gap: 16px;
+    padding: 0 8px;
+  }
+  
+  .card-grid .card {
+    flex: 1 1 100%;           /* cards take full width on small screens */
+    max-width: none;
+  }
 }
