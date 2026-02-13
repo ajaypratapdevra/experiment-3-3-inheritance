@@ -3,7 +3,7 @@ import PersonCard from './PersonCard';
 import './App.css';
 
 function App() {
-  const basePerson = new Person("Ajay Pratap Devra", 21, "ajay.devra@university.edu");
+  const basePerson = new Person("Edward", 16, "edward.mail@university.edu");
   const students = [
     new Student("Anya Sharma", 20, "anya.s@cs.edu", "U48123", "Computer Science"),
     new Student("Rahul Malhotra", 22, "r.malhotra@lit.edu", "U49551", "English Literature")
