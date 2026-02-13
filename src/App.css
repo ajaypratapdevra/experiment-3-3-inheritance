@@ -1,69 +1,64 @@
-/* src/App.css */
 body {
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .app-container {
-  padding: 40px 20px;
+  padding: 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
 .hierarchy-level {
   width: 100%;
   max-width: 900px;
-  background: #ffffff;
+  background: white;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-}
-
-.level-title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #64748b;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #f1f5f9;
-  padding-bottom: 10px;
-}
-
-.card-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.connector {
-  font-size: 2rem;
-  color: #94a3b8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   margin: 10px 0;
 }
 
-/* Updated Card Styles for PersonCard.jsx */
+.level-title {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.connector {
+  font-size: 2.5rem;
+  color: #cbd5e1;
+  font-weight: bold;
+  line-height: 1;
+}
+
 .card {
-  background: #f8fafc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 20px;
   width: 280px;
-  border: 1px solid #e2e8f0;
+  text-align: left;
 }
 
-.card.student { border-left: 6px solid #3b82f6; }
-.card.teacher { border-left: 6px solid #ef4444; }
-.card.general-person { border-left: 6px solid #10b981; }
+/* Fix for role-based coloring */
+.card.student { border-left: 5px solid #3b82f6; }
+.card.teacher { border-left: 5px solid #ef4444; }
+.card.general-person { border-left: 5px solid #10b981; }
 
-.card h3 { font-size: 0.7rem; color: #64748b; margin: 0; }
-.card h2 { font-size: 1.2rem; margin: 5px 0; }
-.details { background: white; padding: 10px; border-radius: 8px; font-size: 0.85rem; margin-top: 10px; border: 1px solid #edf2f7; }
+.card h2 { margin: 5px 0; font-size: 1.25rem; color: #0f172a; }
+.card p { margin: 5px 0; color: #64748b; font-size: 0.9rem; }
+.details { 
+  background: #f1f5f9; 
+  padding: 12px; 
+  border-radius: 8px; 
+  margin-top: 15px; 
+  font-family: monospace;
+  color: #334155;
+}
