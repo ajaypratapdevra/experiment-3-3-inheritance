@@ -1,16 +1,14 @@
-body {
-  background-color: #f8fafc;
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
+/* Fix for the overall layout alignment */
 .app-container {
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Centers the sections and headers */
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Fix for the sections */
 .hierarchy-level {
   width: 100%;
   max-width: 900px;
@@ -20,45 +18,27 @@ body {
   border: 1px solid #e2e8f0;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering the grid inside the section */
 }
 
-.level-title {
-  font-size: 0.85rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid #f1f5f9;
+/* The critical fix for card alignment */
+.card-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Centers cards horizontally */
+  align-items: stretch;    /* Makes cards same height */
+  flex-wrap: wrap;         /* Allows wrapping on small screens */
+  width: 100%;             /* Ensures it uses full section width */
 }
 
+/* Ensure connectors stay centered */
 .connector {
   font-size: 2.5rem;
   color: #cbd5e1;
   font-weight: bold;
   line-height: 1;
-}
-
-.card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  width: 280px;
-  text-align: left;
-}
-
-/* Fix for role-based coloring */
-.card.student { border-left: 5px solid #3b82f6; }
-.card.teacher { border-left: 5px solid #ef4444; }
-.card.general-person { border-left: 5px solid #10b981; }
-
-.card h2 { margin: 5px 0; font-size: 1.25rem; color: #0f172a; }
-.card p { margin: 5px 0; color: #64748b; font-size: 0.9rem; }
-.details { 
-  background: #f1f5f9; 
-  padding: 12px; 
-  border-radius: 8px; 
-  margin-top: 15px; 
-  font-family: monospace;
-  color: #334155;
+  text-align: center;
+  margin: 10px 0;
 }
