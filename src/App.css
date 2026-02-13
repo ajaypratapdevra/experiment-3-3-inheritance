@@ -1,64 +1,125 @@
+/* RESET & BASICS */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+}
+
 body {
-  background-color: #f8fafc;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
-.app-container {
-  padding: 50px 20px;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Clean light grey background */
+  color: #1e293b; /* Dark slate text (Sharp and readable) */
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-.hierarchy-level {
-  width: 100%;
-  max-width: 900px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  margin: 10px 0;
+/* APP CONTAINER */
+.app-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.level-title {
-  font-size: 0.85rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.connector {
+/* HEADINGS */
+h1 {
   font-size: 2.5rem;
-  color: #cbd5e1;
-  font-weight: bold;
-  line-height: 1;
+  color: #0f172a; /* Deep black-blue */
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em; /* Makes text look tighter and sharper */
 }
 
+/* SUBTITLE (Fixed visibility) */
+.app-container > p {
+  color: #64748b; /* Medium grey - clearly visible */
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/* CARD GRID */
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* CARD STYLING */
 .card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  width: 280px;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
   text-align: left;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+  border-top: 6px solid #ccc; /* Default border top */
 }
 
-/* Fix for role-based coloring */
-.card.student { border-left: 5px solid #3b82f6; }
-.card.teacher { border-left: 5px solid #ef4444; }
-.card.general-person { border-left: 5px solid #10b981; }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 
-.card h2 { margin: 5px 0; font-size: 1.25rem; color: #0f172a; }
-.card p { margin: 5px 0; color: #64748b; font-size: 0.9rem; }
-.details { 
-  background: #f1f5f9; 
-  padding: 12px; 
-  border-radius: 8px; 
-  margin-top: 15px; 
-  font-family: monospace;
-  color: #334155;
+/* ROLE COLORS */
+.card.general-person { border-top-color: #10b981; } /* Emerald Green */
+.card.student { border-top-color: #3b82f6; } /* Royal Blue */
+.card.teacher { border-top-color: #f43f5e; } /* Rose Red */
+
+/* CARD TYPOGRAPHY */
+.card h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin: 0;
+  font-weight: 700;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 0.5rem 0;
+  font-weight: 700;
+}
+
+.email {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* DETAILS BOX (Fixed invisible text) */
+.details {
+  background-color: #f1f5f9; /* Light grey box */
+  color: #334155; /* Dark grey text - 100% VISIBLE NOW */
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid #e2e8f0;
+}
+
+.details strong {
+  display: block;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+/* GREETING */
+.greeting {
+  font-style: italic;
+  color: #64748b;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 1rem;
+  margin-top: auto;
 }
